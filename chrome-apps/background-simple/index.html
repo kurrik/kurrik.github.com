@@ -26,10 +26,15 @@
       // Check for support
       if (window.chrome && window.chrome.app && window.chrome.app.isInstalled) {
         document.getElementById('supported').className = '';
+        var noPermission = window.webkitNotifications &&
+                           window.webkitNotifications.checkPermission != 0;
+        if (noPermission) {
+          window.webkitNotifications.requestPermission();
+        }
       } else {
         document.getElementById('unsupported').className = '';
-      }
-      var bgWinUrl = "background.html#yay";
+
+      var bgWinUrl = "ckground.html#yay";
       var bgWinName = "bgNotifier";
 
       function openBackgroundWindow() {
