@@ -6,15 +6,9 @@
 -->
 <html>
   <script>
-    var hasPermission = window.webkitNotifications &&
-                        window.webkitNotifications.checkPermission() == 0;
-    if (hasPermission) {
-      var notification = webkitNotifications.createNotification("",
-          "Simple Background App",
-          "A background window has been created");
-      notification.show();
-    } else {
-      alert('A background window has been created.');
-    }
+    var notification = webkitNotifications.createNotification("",
+        "Simple Background App",
+        "A background window has been created");
+    notification.show();
   </script>
 </html>
