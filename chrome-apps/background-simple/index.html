@@ -27,7 +27,7 @@
       if (window.chrome && window.chrome.app && window.chrome.app.isInstalled) {
         document.getElementById('supported').className = '';
         var noPermission = window.webkitNotifications &&
-                           window.webkitNotifications.checkPermission != 0;
+                           window.webkitNotifications.checkPermission() != 0;
         if (noPermission) {
           window.webkitNotifications.requestPermission();
         }
